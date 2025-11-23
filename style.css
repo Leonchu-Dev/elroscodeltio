@@ -1,0 +1,200 @@
+/* Estilos Generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #fca311;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Contenedor Principal */
+.main-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.rosco-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Panel de Puntuación y Temporizador */
+.score-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #16213e;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.score {
+    font-size: 1.1em;
+    font-weight: 600;
+    flex: 1;
+    text-align: center;
+}
+
+.timer {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #e94560;
+    padding: 5px 20px;
+    border-radius: 8px;
+    flex: 1.5;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.timer.low-time {
+    background-color: #ff0000;
+    animation: pulse 1s infinite;
+}
+
+/* Rosco */
+.rosco {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Mantiene el círculo perfecto */
+    margin-bottom: 20px;
+}
+
+.letter {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #0f3460;
+    color: #e0e0e0;
+    font-weight: 600;
+    border: 3px solid #53a8b6;
+    transition: all 0.3s ease;
+}
+
+.letter.active {
+    background-color: #fca311;
+    color: #1a1a2e;
+    transform: scale(1.2);
+    border-color: #fff;
+}
+
+.letter.correct { background-color: #28a745; color: white; border-color: #28a745; }
+.letter.incorrect { background-color: #dc3545; color: white; border-color: #dc3545; }
+.letter.pasapalabra { background-color: #17a2b8; color: white; border-color: #17a2b8; }
+
+/* Área de Juego (Pregunta y Respuesta) */
+.game-area {
+    width: 100%;
+    text-align: center;
+    background-color: #16213e;
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+#question-display {
+    min-height: 50px;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+#answer-input {
+    width: calc(100% - 24px);
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #53a8b6;
+    background-color: #e0e0e0;
+    color: #1a1a2e;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#submit-answer { background-color: #28a745; color: white; }
+#pasapalabra { background-color: #17a2b8; color: white; }
+#submit-answer:hover { background-color: #218838; transform: translateY(-2px); }
+#pasapalabra:hover { background-color: #138496; transform: translateY(-2px); }
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #16213e;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    color: #e0e0e0;
+    border: 2px solid #fca311;
+}
+
+#restart-game {
+    background-color: #fca311;
+    color: #1a1a2e;
+    margin-top: 20px;
+}
+
+/* Animaciones y otros */
+.error { color: #ff4757; font-weight: 600; min-height: 20px; }
+.animate-shake { animation: shake 0.5s; }
+@keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+/* --- Media Query para Móviles --- */
+@media (max-width: 600px) {
+    body { padding: 10px; }
+    h1 { font-size: 1.5em; }
+    .score-panel { flex-direction: column; gap: 10px; }
+    .timer { order: -1; /* Pone el timer arriba */ }
+    .score { font-size: 1em; }
+    .timer { font-size: 1.8em; }
+    .game-area { padding: 15px; }
+    #question-display { font-size: 1em; }
+    .buttons { flex-direction: column; }
+}
