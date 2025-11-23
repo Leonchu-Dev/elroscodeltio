@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const questions = [
         { letter: "A", question: "Empieza con A: Bebida mágica que convierte a Palito en cantante, filósofo, bailarín y, a veces, todo eso al mismo tiempo.", answer: "Alcohol", status: 0 },
-        { letter: "B", question: "Empieza con B: Palabra que utiliza Pablo Lemus para nombrar a Ade (cuando no hay confianza)", answer: "Boludo", status: 0 },
+        { letter: "B", question: "Empieza con B: Palabra que utiliza Ade para nombrar al tio Palito estando en confianza", answer: "Boludo", status: 0 },
         { letter: "C", question: "Contiene la C: Condimento que le pone el tio Palito a la comida para después ir a mear tocarse el miembro viril", answer: "Picante", status: 0 },
         { letter: "D", question: "Empieza con D: Perrita que tuvieron los hermanos Lemus cuando eran chiquitos", answer: "Diamela", status: 0 },
         { letter: "E", question: "Empieza con E: Banda musical en la cual el tio Palito tuvo un rol por mucho tiempo", answer: "Esquejes", status: 0 },
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let fails = 0;
     let gameQuestions;
     let timer;
-    let timeLeft = 100;
+    let timeLeft = 200;
 
     const roscoElement = document.querySelector('.rosco');
     const questionDisplay = document.getElementById('question-display');
