@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startTimer() {
-        timeLeft = 100;
+        timeLeft = 200;
         timerDisplay.textContent = timeLeft;
         timer = setInterval(() => {
             timeLeft--;
