@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let fails = 0;
     let gameQuestions;
     let timer;
-    let timeLeft = 100;
+    let timeLeft = 200;
 
     const roscoElement = document.querySelector('.rosco');
     const questionDisplay = document.getElementById('question-display');
